@@ -5,7 +5,7 @@ TODO: Put more badges here.
 
 the module is utils.contain axios and localstorage.
 Other updates will follow
-[english readme.md](https://github.com/odinsam/ts-node-odinplugs/blob/main/OdinPlugs/readme.md)
+[readme.md](https://github.com/odinsam/ts-node-odinplugs/blob/main/OdinPlugs/readme.md)
 
 ## 包含内容
 
