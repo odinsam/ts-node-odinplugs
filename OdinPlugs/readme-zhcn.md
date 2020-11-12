@@ -5,62 +5,60 @@ TODO: Put more badges here.
 
 the module is utils.contain axios and localstorage.
 Other updates will follow
-[中文说明](https://github.com/odinsam/ts-node-odinplugs/blob/main/OdinPlugs/readme-zhcn.md)
+[english readme.md](https://github.com/odinsam/ts-node-odinplugs/blob/main/OdinPlugs/readme.md)
 
-## Table of Contents
+## 包含内容
 
 - [odinplugs](#odinplugs)
-  - [Table of Contents](#table-of-contents)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Maintainers](#maintainers)
-  - [Contributing](#contributing)
+  - [包含内容](#包含内容)
+  - [安装](#安装)
+  - [使用](#使用)
+  - [维护 git](#维护-git)
   - [License](#license)
 
-## Install
+## 安装
 
 ```
 npm i odinplugs -g
-or
+或者
 npm i odinplugs --save-dev
 ```
 
-## Usage
+## 使用
 
-LocalStorageHelper 示例:
+LocalStorageHelper example
 
 ```
 import { LocalStorageHelper } from 'odinplugs/dist/LocalStorage/LocalStorageHelper';
 ```
 
-从 localstorage 里取值，如果过期会自动移除
+get value by key.if expiredtime timeout,the key-value will be auto remove.
 
 ```
 LocalStorageHelper.get(key)
 ```
 
-向 localstorage 里赋值，expired 为过期时间
+set value by key.expiredtime is minute
 
 ```
 LocalStorageHelper.set(key,value,expired)
 ```
 
-移除 localstorage 的键值对
+remove key-value by key
 
 ```
 LocalStorageHelper.remove(key)
 ```
 
-axios 示例
+axios example
 
 ```
 export class MyAxios {
-    // 请求拦截器标识
     static requestInterceptorsNumber: number | null = null;
-    // 响应拦截器标识
     static responseInterceptorsNumber: number | null = null;
     static GetInstance(configModel: AxiosConfigModel): AxiosHelper {
         const axiosHelper = new AxiosHelper(configModel);
+        //add custome Interceptors
         axiosHelper.setInterceptors({
             interceptorsRequest: config => {
                 return config;
@@ -87,14 +85,14 @@ export const axiosHelper = MyAxios.GetInstance(
     })
 );
 
-//移除请求拦截器和响应拦截器
+//remove requestInterceptors and responseInterceptors
 axiosHelper.removeInterceptors({
     requestInterceptors: true,
     responseInterceptors: true,
 });
 ```
 
-create api config file
+创建 api 接口配置文件
 
 ```
 import { axiosHelper } from '../../infrastructure/utils/myAxios/MyAxios';
@@ -106,7 +104,7 @@ export const DemoApi = {
 };
 ```
 
-use api
+使用 api 接口文件
 
 ```
 DemoApi.GetTodo()
@@ -121,15 +119,9 @@ DemoApi.GetTodo()
             });
 ```
 
-## Maintainers
+## 维护 git
 
 [@https://github.com/odinsam/ts-node-odinplugs.git](https://github.com/https://github.com/odinsam/ts-node-odinplugs.git)
-
-## Contributing
-
-PRs accepted.
-
-Small note: If editing the README, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
 
 ## License
 
